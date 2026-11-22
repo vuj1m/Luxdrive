@@ -1,0 +1,1288 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --black: #080808;
+    --dark: #111111;
+    --card: #181818;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --gray: #aaaaaa;
+    --border: #2c2c2c;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+
+.section {
+    padding: 60px 0;
+}
+
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(8, 8, 8, 0.75);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.nav {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.logo span {
+    color: var(--gold);
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+
+.nav-links a {
+    color: #cccccc;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.nav-btn {
+    background: var(--gold);
+
+    color: #000;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.gold-btn {
+    background: var(--gold);
+    color: #000;
+}
+
+
+.gold-btn:hover {
+    transform: translateY(-4px);
+}
+
+
+.dark-btn {
+    border: 1px solid var(--border);
+}
+
+
+.dark-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.85)
+        ),
+        url("https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-text {
+    max-width: 700px;
+}
+
+
+.small-title {
+    color: var(--gold);
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+
+.hero h1 {
+    font-size: 70px;
+
+    line-height: 1.05;
+
+    margin: 15px 0 20px;
+}
+
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+
+.hero-description {
+    color: #dddddd;
+
+    max-width: 600px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.section-title p {
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+}
+
+
+.section-title h2 {
+    font-size: 40px;
+
+    margin: 8px 0;
+}
+
+
+.section-title span {
+    color: var(--gray);
+}
+
+
+
+/* =========================================
+   CARS
+========================================= */
+
+.cars-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.car-card {
+    background: var(--card);
+
+    border: 2px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+
+.car-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--gold);
+}
+
+
+.car-image {
+    height: 230px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.car-image img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+
+.car-card:hover img {
+    transform: scale(1.06);
+}
+
+
+.car-badge {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 2;
+
+    background: var(--gold);
+
+    color: #000;
+
+    padding: 5px 10px;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.car-info {
+    padding: 22px;
+}
+
+
+.car-type {
+    color: var(--gold);
+
+    font-size: 13px;
+}
+
+
+.car-info h3 {
+    margin: 5px 0 15px;
+
+    font-size: 22px;
+}
+
+
+.car-features {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+
+.car-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 25px;
+}
+
+
+.car-bottom strong {
+    color: var(--gold);
+
+    font-size: 22px;
+}
+
+
+.car-bottom a {
+    color: var(--gold);
+}
+
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+    background: var(--dark);
+}
+
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+.about-image img {
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+
+.about-content h2 {
+    font-size: 45px;
+
+    line-height: 1.1;
+
+    margin: 10px 0 20px;
+}
+
+
+.about-content > p {
+    color: var(--gray);
+}
+
+
+.about-boxes {
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 30px;
+}
+
+
+.about-boxes strong,
+.about-boxes span {
+    display: block;
+}
+
+
+.about-boxes strong {
+    color: var(--gold);
+
+    font-size: 27px;
+}
+
+
+.about-boxes span {
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.service-card {
+    padding: 30px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+.service-card:hover {
+    border-color: var(--gold);
+
+    transform: translateY(-6px);
+}
+
+
+.service-number {
+    color: var(--gold);
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+.service-card p {
+    color: var(--gray);
+
+    margin-top: 10px;
+}
+
+
+
+/* =========================================
+   REVIEWS
+========================================= */
+
+.reviews {
+    background: var(--dark);
+}
+
+
+.reviews-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.review-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+
+.stars {
+    color: var(--gold);
+
+    margin-bottom: 15px;
+}
+
+
+.review-card p {
+    color: var(--gray);
+
+    margin-bottom: 20px;
+}
+
+
+.review-card span {
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq {
+    background: #0d0d0d;
+}
+
+
+.faq-container {
+    max-width: 800px;
+}
+
+
+details {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    padding: 20px;
+
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+}
+
+
+summary {
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+details p {
+    color: var(--gray);
+
+    margin-top: 15px;
+}
+
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.contact-text h2 {
+    font-size: 45px;
+
+    margin: 10px 0 20px;
+}
+
+
+.contact-text > p {
+    color: var(--gray);
+}
+
+
+.contact-text ul {
+    margin-top: 25px;
+}
+
+
+.contact-text li {
+    margin: 10px 0;
+
+    color: #cccccc;
+}
+
+
+.contact-form,
+.booking-form {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    border-radius: 12px;
+}
+
+
+.contact-form label,
+.booking-form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+}
+
+
+.contact-form input,
+.contact-form textarea,
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 18px;
+
+    background: #0d0d0d;
+
+    color: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    outline: none;
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: var(--gold);
+}
+
+
+.contact-form button,
+.booking-form button {
+    width: 100%;
+
+    border: none;
+
+    background: var(--gold);
+
+    color: black;
+
+    padding: 13px;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.contact-form button:hover,
+.booking-form button:hover {
+    background: #e8c451;
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #050505;
+
+    padding-top: 50px;
+}
+
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-bottom: 40px;
+}
+
+
+.footer-content p {
+    color: var(--gray);
+
+    margin-top: 10px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+
+.footer-links a {
+    color: var(--gray);
+
+    transition: 0.3s;
+}
+
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+
+.copyright {
+    text-align: center;
+
+    color: #777;
+
+    border-top: 1px solid var(--border);
+
+    padding: 20px;
+}
+
+
+
+/* =========================================
+   TOP BUTTON
+========================================= */
+
+.top-btn {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gold);
+
+    color: #000;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+
+/* =========================================
+   BOOKING PAGE
+========================================= */
+
+.page-hero {
+    padding: 100px 0;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.page-hero p {
+    color: var(--gold);
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+}
+
+
+.page-hero h1 {
+    font-size: 55px;
+
+    margin: 10px 0;
+}
+
+
+.page-hero span {
+    color: #cccccc;
+}
+
+
+
+/* =========================================
+   CAR DETAILS
+========================================= */
+
+.car-profile {
+    display: none;
+}
+
+
+.car-profile:target {
+    display: block;
+}
+
+
+.car-specs {
+    margin-top: 90px;
+}
+
+.details-grid {
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    gap: 50px;
+}
+
+
+.main-car-image {
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+.small-images {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+
+.small-images img {
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+
+.car-details h2 {
+    font-size: 40px;
+
+    margin: 10px 0;
+}
+
+
+.price {
+    color: var(--gold);
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+.price span {
+    color: var(--gray);
+
+    font-size: 15px;
+}
+
+
+.car-details > p {
+    color: var(--gray);
+}
+
+
+.details-list {
+    margin: 25px 0;
+}
+
+
+.details-list li {
+    padding: 10px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.specifications {
+    background: var(--dark);
+}
+
+
+.table-container {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--card);
+}
+
+
+th,
+td {
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    text-align: left;
+}
+
+
+th {
+    background: var(--gold);
+
+    color: #000;
+}
+
+
+
+/* =========================================
+   BOOKING FORM
+========================================= */
+
+.booking-grid {
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 70px;
+}
+
+
+.booking-info h2 {
+    font-size: 45px;
+
+    margin: 10px 0 20px;
+}
+
+
+.booking-info > p {
+    color: var(--gray);
+}
+
+
+.booking-note {
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border-left: 4px solid var(--gold);
+
+    background: var(--card);
+}
+
+
+.booking-note p {
+    color: var(--gray);
+
+    margin-top: 5px;
+}
+
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.choice-group {
+    margin-bottom: 20px;
+}
+
+
+.choice-group > p {
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+
+.choice-group label {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-right: 20px;
+
+    color: #cccccc;
+}
+
+
+.choice-group input {
+    width: auto;
+
+    margin: 0 7px 0 0;
+}
+
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+
+    .cars-grid,
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .about-grid,
+    .contact-grid,
+    .details-grid,
+    .booking-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-image img {
+        height: 350px;
+    }
+
+
+    .car-details {
+        max-width: 700px;
+    }
+
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .section {
+        padding: 65px 0;
+    }
+
+
+    .nav {
+        min-height: 65px;
+    }
+
+
+    .nav-links {
+        display: none;
+    }
+
+
+    .nav-btn {
+        padding: 8px 12px;
+
+        font-size: 13px;
+    }
+
+
+    .hero {
+        min-height: 80vh;
+    }
+
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .cars-grid,
+    .services-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .section-title h2,
+    .about-content h2,
+    .contact-text h2,
+    .booking-info h2 {
+        font-size: 34px;
+    }
+
+
+    .about-boxes {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .main-car-image {
+        height: 280px;
+    }
+
+
+    .small-images img {
+        height: 80px;
+    }
+
+
+    .page-hero h1 {
+        font-size: 38px;
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+
+    .choice-group label {
+        display: flex;
+
+        margin: 8px 0;
+    }
+
+}
